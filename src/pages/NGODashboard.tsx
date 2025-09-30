@@ -226,9 +226,10 @@ export default function NGODashboard() {
               ) : (
                 <div className="space-y-4">
                   {projects.map((project) => (
-                    <div
+                    <Link
                       key={project.id}
-                      className="border border-border rounded-lg p-4 hover:bg-muted/30 transition-colors"
+                      to={`/project/${project.id}`}
+                      className="block border border-border rounded-lg p-4 hover:bg-muted/30 transition-colors cursor-pointer"
                     >
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex-1">
@@ -287,7 +288,7 @@ export default function NGODashboard() {
                           <Progress value={project.status === "under_review" ? 60 : 30} className="h-1" />
                         </div>
                       )}
-                    </div>
+                    </Link>
                   ))}
                 </div>
               )}
